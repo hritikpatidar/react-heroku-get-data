@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
+import swal from 'sweetalert';
+
 
 function App() {
   //1. static/variable
@@ -25,19 +27,21 @@ function App() {
       }
     }
     //promiss chain
-    fetch('http://localhost:1337/api/friends',{
+    fetch('https://fathomless-savannah-46209.herokuapp.com/api/friends',{
       method: 'POST',
       headers: {
+        'Authorization': 'Bearer ebae10ba10c71ccb1d89be8935a99b335ff7f2862f3393504bc4831d502fc6a872a2b12aec4e29fa09c571962d4cb5934e9165d4c3ceb6bf9f0e0437ff5b7cd8bbbbea879886dd17c5a4ebf1b42569417540bd10dd899270e3528a1dc062c52ff003e56f8e5f131afec89b3bc6438e114d7372dc9e87f4e570e86dcae9947413',
         'Content-Type': 'application/json',
         'accept': 'application/json',
+        
       },
       body:JSON.stringify(data)
     }).then((d)=>{
       //console.log(d.status)
-      // if(d.status === 200){
-      //   swal("Nice job!", "Data Created Successfully", "success");
+       if(d.status === 200){
+         swal("Nice job!", "Data Created Successfully", "success");
 
-      // }
+       }
     }).catch((e)=>{}).finally((all)=>{});
   }
 
