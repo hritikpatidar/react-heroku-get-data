@@ -7,7 +7,7 @@ function App() {
   //1. static/variable
   // Ex of hooks variable
   // syntex = const [variableName , FunctionName] = useState(initialData)
-  const [ studentName , setStudentName] = useState('Hritik');
+  const [ studentName , setStudentName] = useState('');
 
   //useEffect (<function> , <dependency> )
   useEffect(()=>{
